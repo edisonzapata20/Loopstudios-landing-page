@@ -311,7 +311,7 @@ footer {
 
 /* ==========================MEDIA QUERY FOR DESKTOP CSS============================== */
 
-@media (min-width: 950px) {
+@media (min-width: 920px) {
   header {
     background-image: url("./images/desktop/image-hero.jpg");
     padding: 0 10rem;
