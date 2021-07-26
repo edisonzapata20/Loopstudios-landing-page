@@ -81,13 +81,6 @@ a:hover::after {
   transform: scaleX(1);
 }
 
-.header-fonts {
-  font-family: var(--header-font);
-  text-transform: uppercase;
-  font-size: 2.5rem;
-  max-width: 500px;
-  margin-top: 2rem;
-}
 /* ======================MOBILE MENU========================== */
 .mobile-menu {
   visibility: hidden;
@@ -130,16 +123,20 @@ a:hover::after {
 }
 
 /* =============================================================== */
+
+/* ==========================HEADER AND NAVIGATION CSS============================== */
 nav {
   display: none;
 }
 
+.header-content {
+  padding: 0 1em;
+}
 .title-page {
   padding: 0 1rem;
   border: 2px solid white;
   margin-top: 15rem;
   margin-left: 0.5rem;
-  max-width: 600px;
 }
 h1 {
   color: var(--white);
@@ -174,6 +171,18 @@ h1 {
   z-index: 3;
 }
 
+/* ==========================HEADER AND NAVIGATION CSS============================== */
+
+/* ==========================MAIN AREA CSS============================== */
+
+.grid-header {
+  font-family: var(--header-font);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  text-align: center;
+  max-width: 1000px;
+}
+
 .middle-container {
   min-height: 600px;
   width: 100%;
@@ -199,13 +208,20 @@ h1 {
   margin-top: 5rem;
   min-width: 20ch;
 }
+
+.header-fonts {
+  font-family: var(--header-font);
+  text-transform: uppercase;
+  font-size: 2rem;
+  max-width: 500px;
+}
 .description-text p {
   margin: 2.5em 0;
   padding: 0 3rem;
 }
 .creations-heading {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .creation-wrapper {
   display: flex;
@@ -225,6 +241,8 @@ h1 {
   max-width: 100%;
 }
 .creation-wrapper a {
+  font-family: var(--header-font);
+  text-transform: uppercase;
   max-width: 9ch;
   position: absolute;
   height: 65px;
@@ -232,7 +250,6 @@ h1 {
   left: 20px;
   bottom: 30%;
   top: 30%;
-  overflow: hidden;
 }
 
 .see-container {
@@ -256,6 +273,10 @@ h1 {
   background-color: black;
   color: white;
 }
+
+/* ==========================MAIN AREA CSS============================== */
+
+/* ==========================FOOTER CSS============================== */
 
 footer {
   background-color: var(--Black);
@@ -281,14 +302,27 @@ footer {
   padding: 1em;
   margin-top: 3px;
 }
+.footer-options {
+  min-width: 100px;
+  padding: 0;
+}
+
+/* ==========================FOOTER CSS============================== */
+
+/* ==========================MEDIA QUERY FOR DESKTOP CSS============================== */
 
 @media (min-width: 950px) {
   header {
     background-image: url("./images/desktop/image-hero.jpg");
-    padding: 0 3rem;
+    padding: 0 10rem;
   }
   h1 {
-    font-size: 2.5em;
+    font-size: 5em;
+    max-width: 1000px;
+  }
+
+  .title-page {
+    width: 700px;
   }
   .ham {
     display: none;
@@ -363,25 +397,28 @@ footer {
   }
 
   .middle-wrapper {
-    width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    gap: 15rem;
+    margin-bottom: 5rem;
+    justify-content: flex-start;
+    gap: 33rem;
+    align-items: center;
   }
 
   button {
-    background-color: black; /* Green */
     border: none;
-    color: white;
-    padding: 0.5rem 2rem;
+    width: 150px;
+    height: 35px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
     display: block;
+    background-color: black;
+    color: white;
     font-family: var(--header-font);
     text-transform: uppercase;
     filter: brightness(1.5);
+    border: 1px black solid;
   }
 
   button:hover {
@@ -392,9 +429,9 @@ footer {
   .creation-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 65%;
+    width: 1100px;
     margin: 0 auto;
-    gap: 1em;
+    gap: 2rem;
   }
 
   .creation-images {
@@ -402,15 +439,15 @@ footer {
   }
 
   .creation-wrapper a {
-    max-width: 220px;
+    font-family: var(--header-font);
+    text-transform: uppercase;
     position: absolute;
-    font-size: 2vw;
-    /* height: 100px; */
+    font-size: 2rem;
     margin: 0 auto;
+    height: 100px;
     top: 70%;
     bottom: 0;
     min-width: 25%;
-    overflow: hidden;
   }
 
   picture img {
@@ -425,11 +462,16 @@ footer {
     grid-template-rows: 1fr 1fr;
     padding-bottom: 2rem;
   }
+  .nav-social {
+    width: 500px;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+  }
   .social-media {
     grid-row: 1;
-    width: 500px;
     gap: 30px;
-    margin: 0 auto;
+    margin-left: 10rem;
   }
   .footer-options {
     grid-row: 1;
@@ -444,6 +486,13 @@ footer {
     justify-content: center;
   }
 
+  .footer-text {
+    min-width: 650px;
+  }
+
+  .copyright {
+    min-width: 650px;
+  }
   main {
     margin-bottom: 15rem;
   }
@@ -455,27 +504,16 @@ footer {
     opacity: 0;
     visibility: hidden;
   }
-
-  /* .footer-options li > a::after {
-    cursor: pointer;
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    content: "";
-    border-bottom: solid 1px white;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .footer-options li > a:hover::after {
-    transform: scaleX(1);
-  } */
 }
+
+/* ==========================MEDIA QUERY FOR DESKTOP CSS============================== */
+
+/* ==========================FIXING FONT SIZE IN GALAXY FOLD CSS============================== */
 
 @media (max-width: 280px) {
   h1 {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
   }
 }
+
+/* ==========================FIXING FONT SIZE IN GALAXY FOLD CSS============================== */
