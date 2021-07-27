@@ -442,12 +442,13 @@ footer {
     font-family: var(--header-font);
     text-transform: uppercase;
     position: absolute;
-    font-size: 2rem;
+    font-size: 1.9rem;
     margin: 0 auto;
-    height: 100px;
-    top: 70%;
+    height: 75px;
+    top: 69%;
     bottom: 0;
     min-width: 25%;
+    overflow-y: hidden;
   }
 
   picture img {
